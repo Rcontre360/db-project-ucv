@@ -21,20 +21,22 @@ CREATE TABLE Personaje (
 );
 
 CREATE TABLE Heroe (
-    NombreHeroe VARCHAR(255) PRIMARY KEY,
+    NombreCompleto VARCHAR(255) PRIMARY KEY REFERENCES Personaje(NombreCompleto),
+    NombreHeroe VARCHAR(255),
     ColoresTraje VARCHAR(255),
     Logotipo VARCHAR(255),
     VillanoRivaliza VARCHAR(255),
     ObjetivoV VARCHAR(255),
-    EnemigosV VARCHAR(255),
-    NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto)
+    EnemigosV VARCHAR(255)
 );
 
 CREATE TABLE Sede (
-    Nombre VARCHAR(255) REFERENCES Organizacion(Nombre),
-    NombreSede VARCHAR(255) PRIMARY KEY,
-    Ubicacion VARCHAR(255),
-    TipoEdificacion VARCHAR(255)
+    Nombre varchar(255) NOT NULL,
+    NombreSede varchar(255) NOT NULL,
+    UbicaciónSd varchar(255),
+    TipoEdificaciónSd varchar(255),
+    PRIMARY KEY (Nombre, NombreSede),
+    FOREIGN KEY (Nombre) REFERENCES Organizacion(Nombre)
 );
 
 CREATE TABLE Nacionalidad (
@@ -76,7 +78,7 @@ CREATE TABLE Pelicula (
     TipoPeliculaPe VARCHAR(255),
     CosteProdPe MONEY,
     GananciasPe MONEY,
-    TituloMedio VARCHAR(255) REFERENCES Medio(TituloMedio)
+    TituloMedio VARCHAR(255) PRIMARY KEY REFERENCES Medio(TituloMedio)
 );
 
 CREATE TABLE Serie (
@@ -84,14 +86,14 @@ CREATE TABLE Serie (
     TotalEpiSe INTEGER,
     CanalTransSe VARCHAR(255),
     TipoSe VARCHAR(255),
-    TituloMedio VARCHAR(255) REFERENCES Medio(TituloMedio)
+    TituloMedio VARCHAR(255) PRIMARY KEY REFERENCES Medio(TituloMedio)
 );
 
 CREATE TABLE Videojuego (
-    PlataformasVid VARCHAR(255) PRIMARY KEY,
+    PlataformasVid VARCHAR(255),
     TipoJuego VARCHAR(255),
     CompaniaPubVid VARCHAR(255),
-    TituloMedio VARCHAR(255) REFERENCES Medio(TituloMedio)
+    TituloMedio VARCHAR(255) PRIMARY KEY REFERENCES Medio(TituloMedio)
 );
 
 CREATE TABLE Aparece (
