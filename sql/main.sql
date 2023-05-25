@@ -11,11 +11,10 @@ CREATE TABLE Organizacion (
 
 CREATE TABLE Personaje (
     NombreCompleto VARCHAR(255) PRIMARY KEY,
-    Genero VARCHAR(50),
+    Genero VARCHAR(50) CHECK (Genero IN ('M', 'F', 'Desc', 'Otro')),
     ColorPelo VARCHAR(50),
     ColorOjos VARCHAR(50),
-    EstadoMarital VARCHAR(50),
-    Creadores VARCHAR(255),
+    EstadoMarital VARCHAR(50) CHECK (EstadoMarital IN ('Soltero', 'Casado', 'Viudo', 'Divorciado')),
     PrimeraAparicion DATE,
     FraseCelebre VARCHAR(255)
 );
@@ -23,11 +22,9 @@ CREATE TABLE Personaje (
 CREATE TABLE Heroe (
     NombreCompleto VARCHAR(255) PRIMARY KEY REFERENCES Personaje(NombreCompleto),
     NombreHeroe VARCHAR(255),
-    ColoresTraje VARCHAR(255),
     Logotipo VARCHAR(255),
     VillanoRivaliza VARCHAR(255),
     ObjetivoV VARCHAR(255),
-    EnemigosV VARCHAR(255)
 );
 
 CREATE TABLE Sede (
@@ -46,7 +43,6 @@ CREATE TABLE Nacionalidad (
 
 CREATE TABLE Objeto (
     NombreObj VARCHAR(255) PRIMARY KEY,
-    CreadoresOb VARCHAR(255),
     MaterialFabOb VARCHAR(255),
     TipoObjetoOb VARCHAR(255),
     DescripcionOb VARCHAR(255)
@@ -67,7 +63,7 @@ CREATE TABLE Medio (
     TituloMedio VARCHAR(255) PRIMARY KEY,
     FechaEstrM DATE,
     CompaniaProdM VARCHAR(255),
-    RatingM NUMERIC,
+    RatingM NUMERIC CHECK (RatingM >= 1 AND RatingM <= 5),
     SinposisM TEXT
 );
 
@@ -90,7 +86,6 @@ CREATE TABLE Serie (
 );
 
 CREATE TABLE Videojuego (
-    PlataformasVid VARCHAR(255),
     TipoJuego VARCHAR(255),
     CompaniaPubVid VARCHAR(255),
     TituloMedio VARCHAR(255) PRIMARY KEY REFERENCES Medio(TituloMedio)
@@ -100,8 +95,8 @@ CREATE TABLE Aparece (
     NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto),
     TituloMedio VARCHAR(255) REFERENCES Medio(TituloMedio),
     NombreActor VARCHAR(255),
-    Rol VARCHAR(255),
-    TipoActor VARCHAR(255),
+    Rol VARCHAR(255) CHECK (Rol IN ('Protagonista', 'Antagonista', 'Secundario')),
+    TipoActor VARCHAR(255) CHECK (TipoActor IN ('Interpreta', 'Presta su voz')),
     PRIMARY KEY (NombreCompleto, TituloMedio)
 );
 
@@ -156,25 +151,25 @@ CREATE TABLE Tiene (
     PRIMARY KEY (NombreCompleto, Pais)
 );
 
-CREATE TABLE Ocupaciones (
+CREATE TABLE OcupacionPersonaje (
     NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto),
     Ocupacion VARCHAR(255),
     PRIMARY KEY (NombreCompleto, Ocupacion)
 );
 
-CREATE TABLE Creadores (
+CREATE TABLE CreadorPersonaje (
     NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto),
     Creador VARCHAR(255),
     PRIMARY KEY (NombreCompleto, Creador)
 );
 
-CREATE TABLE ColorTraje (
+CREATE TABLE ColorTrajeHeroe (
     NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto),
     Color VARCHAR(255),
     PRIMARY KEY (NombreCompleto, Color)
 );
 
-CREATE TABLE Enemigo (
+CREATE TABLE EnemigoVillano (
     NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto),
     Enemigo VARCHAR(255),
     PRIMARY KEY (NombreCompleto, Enemigo)
@@ -186,7 +181,7 @@ CREATE TABLE CreadorObjeto (
     PRIMARY KEY (NombreObj, Creador)
 );
 
-CREATE TABLE Platform (
+CREATE TABLE PlatformVideoJuego (
     TituloMedio VARCHAR(255) REFERENCES Medio(TituloMedio),
     Plataforma VARCHAR(255),
     PRIMARY KEY (TituloMedio, Plataforma)
