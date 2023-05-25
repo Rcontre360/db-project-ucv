@@ -9,13 +9,13 @@ CREATE TABLE Conoce(
     Heroe VARCHAR(255) REFERENCES Heroe(NombreCompleto),
     Civil VARCHAR(255) REFERENCES Civil(NombreCompleto),
     PRIMARY KEY (Heroe,Civil)
-)
+);
 
 CREATE TABLE Trata(
     Villano VARCHAR(255) REFERENCES Heroe(NombreCompleto),
     Civil VARCHAR(255) REFERENCES Civil(NombreCompleto),
     PRIMARY KEY (Villano,Civil)
-)
+);
 
 CREATE TABLE Aparece (
     NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto),
@@ -47,12 +47,12 @@ CREATE TABLE Pertenece (
 CREATE TABLE Porta (
     NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto),
     NombreObj VARCHAR(255) REFERENCES Objeto(Nombre),
-    PRIMARY KEY (NombreCompleto, Nombre)
+    PRIMARY KEY (NombreCompleto, NombreObj)
 );
 
 CREATE TABLE Posee (
     NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto),
-    NombrePoder VARCHAR(255) REFERENCES Poder(NombrePoder),
+    NombrePoder VARCHAR(255) REFERENCES Poder(Nombre),
     FormaObtencion VARCHAR(255) CHECK (FormaObtencion IN ('Hereditario', 'Artificial', 'Natural')),
     PRIMARY KEY (NombreCompleto, NombrePoder)
 );
@@ -69,9 +69,10 @@ CREATE TABLE ParticipaObj (
 
 CREATE TABLE ParticipaPod (
     NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto),
-    NombrePoder VARCHAR(255) REFERENCES Poder(NombrePoder),
+    NombrePoder VARCHAR(255) REFERENCES Poder(Nombre),
     FechaCombate DATE,
     LugarComb VARCHAR(255),
 
     PRIMARY KEY (NombreCompleto, NombrePoder, FechaCombate, LugarComb)
 );
+
