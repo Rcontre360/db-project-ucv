@@ -16,10 +16,8 @@ CREATE TABLE Organizacion (
     Objetivo VARCHAR(255),
     LugarCreacion VARCHAR(255),
     PrimeraAparicion DATE,
-
     PersonajeLidera VARCHAR(255),
     NombreSede VARCHAR(255),
-
     FOREIGN KEY (PersonajeLidera) REFERENCES Personaje(NombreCompleto)
 );
 
@@ -33,8 +31,7 @@ CREATE TABLE Heroe (
     NombreCompleto VARCHAR(255) PRIMARY KEY REFERENCES Personaje(NombreCompleto),
     NombreHeroe VARCHAR(255),
     Logotipo VARCHAR(255),
-
-    VillanoRivaliza VARCHAR(255),
+    VillanoRivaliza VARCHAR(255) UNIQUE,
     FOREIGN KEY (VillanoRivaliza) REFERENCES Villano(NombreCompleto)
 );
 
