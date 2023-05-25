@@ -20,11 +20,9 @@ CREATE TABLE Trata(
 CREATE TABLE Aparece (
     NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto),
     TituloMedio VARCHAR(255) REFERENCES Medio(TituloMedio),
-
     NombreActor VARCHAR(255),
-    Rol VARCHAR(255),
+    Rol VARCHAR(255) CHECK (Rol IN ('Protagonista', 'Antagonista', 'Secundario')),
     TipoActor VARCHAR(255) CHECK (TipoActor IN ('Interpreta', 'Presta su voz')),
-
     PRIMARY KEY (NombreCompleto, TituloMedio)
 );
 
