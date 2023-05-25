@@ -21,8 +21,8 @@ CREATE TABLE Aparece (
     NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto),
     TituloMedio VARCHAR(255) REFERENCES Medio(TituloMedio),
     NombreActor VARCHAR(255),
-    Rol VARCHAR(255) CHECK (Rol IN ('Protagonista', 'Antagonista', 'Secundario')),
-    TipoActor VARCHAR(255) CHECK (TipoActor IN ('Interpreta', 'Presta su voz')),
+    Rol VARCHAR(255) CHECK (Rol IN ('Protagonista', 'Antagonista', 'Secundario')), --Restricción 4 Ítem a) :Los tipos de personajes deben ser protagonistas, antagonistas o secundarios
+    TipoActor VARCHAR(255) CHECK (TipoActor IN ('Interpreta', 'Presta su voz')),--Restricción 5 Ítem a) : Los tipos de actor son “Interpreta”, “presta su voz”
     PRIMARY KEY (NombreCompleto, TituloMedio)
 );
 
@@ -39,7 +39,7 @@ CREATE TABLE Interviene (
 CREATE TABLE Pertenece (
     NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto),
     NombreOrg VARCHAR(255) REFERENCES Organizacion(Nombre),
-    Cargo VARCHAR(255) NOT NULL,
+    Cargo VARCHAR(255) NOT NULL, --Restricción 6 Ítem a) : Los cargos no pueden ser nulos.
     Fecha DATE,
     PRIMARY KEY (NombreCompleto, NombreOrg, Cargo, Fecha)
 );

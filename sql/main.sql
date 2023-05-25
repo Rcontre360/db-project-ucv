@@ -1,10 +1,10 @@
 
 CREATE TABLE Personaje (
     NombreCompleto VARCHAR(255) PRIMARY KEY,
-    Genero VARCHAR(50) CHECK (Genero IN ('M', 'F', 'Desc', 'Otro')),
+    Genero VARCHAR(50) CHECK (Genero IN ('M', 'F', 'Desc', 'Otro')), --Restricción 2 Ítem a) : El género debe ser “M”, “F”, “Desc”, “Otro”
     ColorPelo VARCHAR(50),
     ColorOjos VARCHAR(50),
-    EstadoMarital VARCHAR(50) CHECK (EstadoMarital IN ('Soltero', 'Casado', 'Viudo', 'Divorciado')),
+    EstadoMarital VARCHAR(50) CHECK (EstadoMarital IN ('Soltero', 'Casado', 'Viudo', 'Divorciado')), --Restricción 3 Ítem a) : El estado marital debe ser “Soltero”, “Casado”, “Viudo”, “Divorciado”
     PrimeraAparicion DATE,
     FraseCelebre VARCHAR(255)
 );
@@ -76,7 +76,7 @@ CREATE TABLE Medio (
     TituloMedio VARCHAR(255) PRIMARY KEY,
     FechaEstrM DATE,
     CompaniaProdM VARCHAR(255),
-    RatingM NUMERIC CHECK (RatingM >= 1 AND RatingM <= 5),
+    RatingM NUMERIC CHECK (RatingM >= 1 AND RatingM <= 5), --Restricción 1 Ítem a) : El Rating de un medio debe estar entre 1 y 5
     SinposisM TEXT
 );
 
