@@ -31,7 +31,7 @@ CREATE TABLE Heroe (
     NombreCompleto VARCHAR(255) PRIMARY KEY REFERENCES Personaje(NombreCompleto),
     NombreHeroe VARCHAR(255),
     Logotipo VARCHAR(255),
-    VillanoRivaliza VARCHAR(255) UNIQUE,
+    VillanoRivaliza VARCHAR(255) UNIQUE, --Restricción 7 Ítem a) : El sistema debe garantizar que cada héroe tiene un solo archienemigo.
     FOREIGN KEY (VillanoRivaliza) REFERENCES Villano(NombreCompleto)
 );
 
