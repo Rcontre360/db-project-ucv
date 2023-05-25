@@ -1,17 +1,3 @@
-CREATE TABLE Organizacion (
-    Nombre VARCHAR(255) PRIMARY KEY,
-    Slogan VARCHAR(255),
-    Tipo VARCHAR(255),
-    Objetivo VARCHAR(255),
-    LugarCreacion VARCHAR(255),
-    PrimeraAparicion DATE,
-
-    PersonajeLidera VARCHAR(255),
-    NombreSede VARCHAR(255),
-
-    FOREIGN KEY (PersonajeLidera) REFERENCES Personaje(NombreCompleto),
-    FOREIGN KEY (NombreSede) REFERENCES Sede(Nombre)
-);
 
 CREATE TABLE Personaje (
     NombreCompleto VARCHAR(255) PRIMARY KEY,
@@ -23,6 +9,26 @@ CREATE TABLE Personaje (
     FraseCelebre VARCHAR(255)
 );
 
+CREATE TABLE Organizacion (
+    Nombre VARCHAR(255) PRIMARY KEY,
+    Slogan VARCHAR(255),
+    Tipo VARCHAR(255),
+    Objetivo VARCHAR(255),
+    LugarCreacion VARCHAR(255),
+    PrimeraAparicion DATE,
+
+    PersonajeLidera VARCHAR(255),
+    NombreSede VARCHAR(255),
+
+    FOREIGN KEY (PersonajeLidera) REFERENCES Personaje(NombreCompleto)
+);
+
+CREATE TABLE Villano(
+    NombreCompleto VARCHAR(255) PRIMARY KEY REFERENCES Personaje(NombreCompleto),
+    NombreVillano VARCHAR(255),
+    Objetivo VARCHAR(255)
+);
+
 CREATE TABLE Heroe (
     NombreCompleto VARCHAR(255) PRIMARY KEY REFERENCES Personaje(NombreCompleto),
     NombreHeroe VARCHAR(255),
@@ -30,12 +36,6 @@ CREATE TABLE Heroe (
 
     VillanoRivaliza VARCHAR(255),
     FOREIGN KEY (VillanoRivaliza) REFERENCES Villano(NombreCompleto)
-);
-
-CREATE TABLE Villano(
-    NombreCompleto VARCHAR(255) PRIMARY KEY REFERENCES Personaje(NombreCompleto),
-    NombreVillano VARCHAR(255),
-    Objetivo VARCHAR(255)
 );
 
 CREATE TABLE Civil(
@@ -135,14 +135,14 @@ CREATE TABLE Pertenece (
 
 CREATE TABLE Posee (
     NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto),
-    NombrePoder VARCHAR(255) REFERENCES Poder(NombrePoder),
+    NombrePoder VARCHAR(255) REFERENCES Poder(Nombre),
     FormaObtencion VARCHAR(255) CHECK (FormaObtencion IN ('Hereditario', 'Artificial', 'Natural')),
     PRIMARY KEY (NombreCompleto, NombrePoder)
 );
 
 CREATE TABLE Porta (
     NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto),
-    NombreObj VARCHAR(255) REFERENCES Objeto(NombreObj),
+    NombreObj VARCHAR(255) REFERENCES Objeto(Nombre),
     PRIMARY KEY (NombreCompleto, NombreObj)
 );
 
@@ -150,13 +150,13 @@ CREATE TABLE ParticipaObj (
     NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto),
     FechaCombate DATE,
     LugarComb VARCHAR(255),
-    NombreObj VARCHAR(255) REFERENCES Objeto(NombreObj),
+    NombreObj VARCHAR(255) REFERENCES Objeto(Nombre),
     PRIMARY KEY (NombreCompleto, FechaCombate, LugarComb, NombreObj)
 );
 
 CREATE TABLE ParticipaPod (
     NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto),
-    NombrePoder VARCHAR(255) REFERENCES Poder(NombrePoder),
+    NombrePoder VARCHAR(255) REFERENCES Poder(Nombre),
     FechaCombate DATE,
     LugarComb VARCHAR(255),
     PRIMARY KEY (NombreCompleto, NombrePoder, FechaCombate, LugarComb)
@@ -193,7 +193,7 @@ CREATE TABLE EnemigoVillano (
 );
 
 CREATE TABLE CreadorObjeto (
-    NombreObj VARCHAR(255) REFERENCES Objeto(NombreObj),
+    NombreObj VARCHAR(255) REFERENCES Objeto(Nombre),
     Creador VARCHAR(255),
     PRIMARY KEY (NombreObj, Creador)
 );
@@ -203,5 +203,7 @@ CREATE TABLE PlatformVideoJuego (
     Plataforma VARCHAR(255),
     PRIMARY KEY (TituloMedio, Plataforma)
 );
+
+
 
 
