@@ -104,5 +104,20 @@ CREATE TABLE Videojuego (
     CompaniaPub VARCHAR(255),
     TituloMedio VARCHAR(255) PRIMARY KEY REFERENCES Medio(TituloMedio)
 );
+--Restricción 8 Ítem a) : Si el costo de producción es mayor que las ganancias, dar un mensaje (trigger).
 
+CREATE OR REPLACE FUNCTION verificar_ganancias()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.CosteProdPe > NEW.GananciasPe THEN
+        RAISE EXCEPTION 'El costo de producción es mayor que las ganancias.';
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER costo_vs_ganancias_trigger
+BEFORE INSERT OR UPDATE ON Pelicula
+FOR EACH ROW
+EXECUTE FUNCTION verificar_ganancias();
 
