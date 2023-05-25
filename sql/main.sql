@@ -7,9 +7,9 @@ CREATE TABLE Organizacion (
     PrimeraAparicion DATE,
 
     PersonajeLidera VARCHAR(255),
-    NombreSede VARCHAR(255)
+    NombreSede VARCHAR(255),
 
-    FOREIGN KEY (PersonajeLidera) REFERENCES Personaje(NombreCompleto)
+    FOREIGN KEY (PersonajeLidera) REFERENCES Personaje(NombreCompleto),
     FOREIGN KEY (NombreSede) REFERENCES Sede(Nombre)
 );
 
@@ -36,11 +36,11 @@ CREATE TABLE Villano(
     NombreCompleto VARCHAR(255) PRIMARY KEY REFERENCES Personaje(NombreCompleto),
     NombreVillano VARCHAR(255),
     Objetivo VARCHAR(255)
-)
+);
 
 CREATE TABLE Civil(
-    NombreCompleto VARCHAR(255) PRIMARY KEY REFERENCES Personaje(NombreCompleto),
-)
+    NombreCompleto VARCHAR(255) PRIMARY KEY REFERENCES Personaje(NombreCompleto)
+);
 
 CREATE TABLE Sede (
     Nombre varchar(255) NOT NULL,
@@ -203,4 +203,5 @@ CREATE TABLE PlatformVideoJuego (
     Plataforma VARCHAR(255),
     PRIMARY KEY (TituloMedio, Plataforma)
 );
+
 
