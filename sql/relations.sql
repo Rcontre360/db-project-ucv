@@ -39,9 +39,8 @@ CREATE TABLE Interviene (
 CREATE TABLE Pertenece (
     NombreCompleto VARCHAR(255) REFERENCES Personaje(NombreCompleto),
     NombreOrg VARCHAR(255) REFERENCES Organizacion(Nombre),
-    Cargo VARCHAR(255),
+    Cargo VARCHAR(255) NOT NULL,
     Fecha DATE,
-
     PRIMARY KEY (NombreCompleto, NombreOrg, Cargo, Fecha)
 );
 
