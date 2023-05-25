@@ -1,33 +1,33 @@
 
-CREATE TABLE ColoresTraje(
+CREATE TABLE ColoresTrajeHeroe(
     NombreHeroe VARCHAR(255) PRIMARY KEY REFERENCES Personaje(NombreCompleto),
     ColorTraje VARCHAR(255),
 
     PRIMARY KEY (NombreHeroe,ColorTraje)
 )
 
-CREATE TABLE Enemigos(
+CREATE TABLE EnemigoVillano(
     NombreVillano VARCHAR(255) PRIMARY KEY REFERENCES Personaje(NombreCompleto),
     Enemigo VARCHAR(255),
 
     PRIMARY KEY (NombreVillano,Enemigo)
 )
 
-CREATE TABLE Ocupaciones(
+CREATE TABLE OcupacionPersonaje(
     NombrePersonaje VARCHAR(255) PRIMARY KEY REFERENCES Personaje(NombreCompleto),
     Ocupacion VARCHAR(255),
 
     PRIMARY KEY (NombrePersonaje,Ocupacion)
 )
 
-CREATE TABLE Creadores(
+CREATE TABLE CreadorPersonaje(
     NombrePersonaje VARCHAR(255) PRIMARY KEY REFERENCES Personaje(NombreCompleto),
     Creador VARCHAR(255),
 
     PRIMARY KEY (NombrePersonaje,Creador)
 )
 
-CREATE TABLE Plataformas(
+CREATE TABLE PlataformasVideojuego(
     Videojuego VARCHAR(255) PRIMARY KEY REFERENCES Medio(TituloMedio)
     Plataforma VARCHAR(255),
 
