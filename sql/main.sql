@@ -204,4 +204,3 @@ CREATE TABLE PlatformVideoJuego (
     PRIMARY KEY (TituloMedio, Plataforma)
 );
 
->>>>>>> 369fa8dada559a061a9e67d8a2c991a1371bedf4
