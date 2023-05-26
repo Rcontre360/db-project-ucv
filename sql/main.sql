@@ -12,7 +12,7 @@ CREATE TABLE Personaje (
 CREATE TABLE Organizacion (
     Nombre VARCHAR(255) PRIMARY KEY,
     Slogan VARCHAR(255),
-    Tipo VARCHAR(255) CHECK (Tipo IN('Superhéroes','Villanos','Civiles')) --Se agregó esta restricción de acuerdo al ítem c)
+    Tipo VARCHAR(255) CHECK (Tipo IN('Superhéroes','Villanos','Civiles')), --Se agregó esta restricción de acuerdo al ítem c)
     Objetivo VARCHAR(255),
     LugarCreacion VARCHAR(255),
     PrimeraAparicion DATE,
@@ -108,7 +108,7 @@ CREATE TABLE Videojuego (
 CREATE OR REPLACE FUNCTION verificar_ganancias() --Restricción 8 Ítem a) : Si el costo de producción es mayor que las ganancias, dar un mensaje (trigger).
 RETURNS TRIGGER AS $$
 BEGIN
-    IF NEW.CosteProdPe > NEW.GananciasPe THEN
+    IF NEW.CosteProd > NEW.Ganancias THEN
         RAISE EXCEPTION 'El costo de producción es mayor que las ganancias.';
     END IF;
     RETURN NEW;
@@ -120,8 +120,3 @@ BEFORE INSERT OR UPDATE ON Pelicula
 FOR EACH ROW
 EXECUTE FUNCTION verificar_ganancias();
 
---Inserciones
-INSERT INTO Organizacion (Nombre, Slogan, Tipo, Objetivo, LugarCreacion, PrimeraAparicion, PersonajeLidera, NombreSede) --d 1)
-VALUES ('Avengers', 'Vengadores Unidos', 'Superhéroes', 'Proteger el universo de amenazas internacionales o alienígenas', 'Nueva York', '1963-09-01', 'Captain America', 'Torre de los Avengers'),
-       ('Hydra', 'Si se corta una cabeza, dos más tomarán su lugar', 'Villanos', 'Dominar el mundo', 'Europa', '1965-03-01', 'Red Skull', 'Base de Hydra'),
-       ('S.H.I.E.L.D.', 'Protección y espionaje a nivel global', 'Civiles', 'Lidiar con diversas situaciones en un mundo poblado de superhéroes, alienígenas e historias inusuales', 'Washington D.C.', '1965-08-01', 'Nick Fury', 'Helicarrier');
