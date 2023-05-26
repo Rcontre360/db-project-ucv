@@ -63,7 +63,6 @@ CREATE TABLE ParticipaObj (
     FechaCombate DATE,
     LugarComb VARCHAR(255),
     Nombre VARCHAR(255) REFERENCES Objeto(Nombre),
-
     PRIMARY KEY (NombreCompleto, FechaCombate, LugarComb, Nombre)
 );
 
@@ -72,7 +71,6 @@ CREATE TABLE ParticipaPod (
     NombrePoder VARCHAR(255) REFERENCES Poder(Nombre),
     FechaCombate DATE,
     LugarComb VARCHAR(255),
-
     PRIMARY KEY (NombreCompleto, NombrePoder, FechaCombate, LugarComb)
 );
 
