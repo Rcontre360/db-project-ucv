@@ -85,8 +85,8 @@ CREATE TABLE Pelicula (
     Duracion NUMERIC,
     Distribuidor VARCHAR(255),
     TipoPelicula VARCHAR(255),
-    CosteProd MONEY,
-    Ganancias MONEY,
+    CosteProd NUMERIC,
+    Ganancias NUMERIC,
 
     TituloMedio VARCHAR(255) PRIMARY KEY REFERENCES Medio(TituloMedio)
 );
