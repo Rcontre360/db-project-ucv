@@ -13,6 +13,19 @@ WHERE TotalEpi > (
 		SELECT AVG(TotalEpi) 
 		FROM Serie);
 
+SELECT Objeto.Nombre --Consulta #3
+FROM Objeto, Porta, Personaje
+WHERE Objeto.Nombre = Porta.NombreObj AND Personaje.NombreCompleto = Porta.NombreCompleto
+GROUP BY Objeto.Nombre
+ORDER BY COUNT(*) DESC
+LIMIT 5;
+
+SELECT Lugar --Consulta #4
+FROM Combate
+GROUP BY Lugar
+ORDER BY COUNT(*) DESC
+LIMIT 3;
+
 SELECT Descripcion --Consulta #5
 FROM Poder
 WHERE Poder.Nombre IN (
