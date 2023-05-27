@@ -47,16 +47,16 @@ WHERE Pelicula.Duracion > 150 AND Pelicula.TipoPelicula = 'animada' AND Pelicula
 		WHERE TipoPelicula = 'animada')
 ORDER BY Pelicula.CosteProd;
 
-SELECT NombreActor --Consulta #7 (Nombre de los actores que interpretan a Spider Man en peliculas)
+SELECT NombreActor --Consulta #7 (Nombre de los actores que interpretan a Peter Parker en peliculas)
 FROM Aparece
-WHERE Aparece.TipoActor = 'Interpreta' AND Aparece.NombreCompleto = 'Spider Man' AND TituloMedio IN (
+WHERE Aparece.TipoActor = 'Interpreta' AND Aparece.NombreCompleto = 'Peter Paker' AND TituloMedio IN (
     		SELECT TituloMedio
     		FROM Pelicula);
 
-SELECT TituloMedio --Consulta #8 (Videojuegos en lo que aparece Iron Man o Capitan America que sean Online y tengan "Lego" en el nombre)
+SELECT TituloMedio --Consulta #8 (Videojuegos en lo que aparece Tony Stark o Steve Rogers que sean Online y tengan "Lego" en el nombre)
 FROM Aparece
 WHERE Aparece.TituloMedio IN (
 		SELECT TituloMedio 
 		FROM Videojuego 
 		WHERE TituloMedio LIKE '%Lego%' AND TipoJuego = 'Online')
-	AND (Aparece.NombreCompleto LIKE '%Iron Man%' OR Aparece.NombreCompleto LIKE '%Capitan America%');
+	AND (Aparece.NombreCompleto LIKE '%Tony Stark%' OR Aparece.NombreCompleto LIKE '%Steve Rogers%');
