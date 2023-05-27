@@ -49,7 +49,7 @@ WHERE Poder.Nombre IN (
 	
 SELECT NombreActor --Consulta #7 (Nombre de los actores que interpretan a Peter Parker en peliculas)
 FROM Aparece
-WHERE Aparece.TipoActor = 'Interpreta' AND Aparece.NombreCompleto = 'Peter Paker' AND TituloMedio IN (
+WHERE Aparece.TipoActor = 'Interpreta' AND Aparece.NombreCompleto = 'Peter Parker' AND TituloMedio IN (
     		SELECT TituloMedio
     		FROM Pelicula);
 
