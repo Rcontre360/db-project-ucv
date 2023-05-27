@@ -3,6 +3,8 @@ INSERT INTO Personaje(NombreCompleto, Genero, ColorPelo, ColorOjos, EstadoMarita
 VALUES 
     ('Tony Stark', 'M', 'Black', 'Blue', 'Divorciado', '1963-03-01', 'I am Iron Man.'),
     ('Steve Rogers', 'M', 'Blonde', 'Blue', 'Soltero', '1941-03-01', 'I can do this all day.'),
+    ('Groot', 'M', 'Marrón', 'Marrón', 'Soltero', '1960-11-13', 'I am Groot.'),
+    ('Thor Odinson', 'M', 'Rubio', 'Azul', 'Soltero', '1962-08-01', 'BRING ME THANOS!'),
     ('Natasha Romanoff', 'F', 'Red', 'Green', 'Soltero', '1964-04-01', 'I’m always picking up after you boys.'),
     ('Bruce Banner', 'M', 'Brown', 'Green', 'Soltero', '1962-05-01', 'That’s my secret, Captain. I’m always angry.'),
     ('Peter Parker', 'M', 'Brown', 'Hazel', 'Soltero', '1962-08-01', 'With great power, comes great responsibility.'),
@@ -20,6 +22,8 @@ VALUES
     ('Reed Richards', 'M', 'Brown', 'Brown', 'Casado', '1961-11-01', 'Its clobbering time!'),
     ('Charles Xavier', 'M', 'Bald', 'Blue', 'Soltero', '1963-09-01', 'Mutation is not the end of the world, but a new beginning.'),
     ('Emil Blonsky', 'M', 'Black', 'Green', 'Soltero', '1967-05-01', 'There is no Abomination, only Blonsky!'),
+    ('Cain Marko', 'M', 'Pelirrojo', 'Azul', 'Soltero', '1965-07-01', 'Nothing can stop the Juggernaut!'),
+    ('Thanos', 'M', 'Ninguno', 'Desconocido', 'Soltero', '1973-02-01', 'I am inevitable.'),
     ('Norman Osborn', 'M', 'Red', 'Green', 'Viudo', '1964-07-01', 'We all wear masks, Spider-Man. But which one is real? The one that hides your face, or the one that is your face?');
 
 
@@ -43,6 +47,8 @@ VALUES
     ('Victor Von Doom', 'Doctor Doom', 'Rule the world'),
     ('Erik Lehnsherr', 'Magneto', 'Mutant superiority'),
     ('Emil Blonsky', 'Abomination', 'Destruction and power'),
+    ('Thanos', 'Thanos', 'Balance'),
+    ('Cain Marko', 'Juggernaut', 'Destruction and power'),
     ('Norman Osborn', 'Green Goblin', 'Chaos and power');
 
 -- Table: Heroe
@@ -50,7 +56,8 @@ INSERT INTO Heroe(NombreCompleto, NombreHeroe, Logotipo, VillanoRivaliza)
 VALUES 
     ('Tony Stark', 'Iron Man', 'Iron Man Helmet', 'Ultron'),
     ('Steve Rogers', 'Captain America', 'Captain America Shield', 'Johann Shmidt'),
-    ('Natasha Romanoff', 'Black Widow', 'Black Widow Hourglass', 'Loki Laufeyson'),
+    ('Thor Odinson', 'Thor', 'Thors hammer', 'Loki Laufeyson'),
+    ('Natasha Romanoff', 'Black Widow', 'Black Widow Hourglass', 'Victor Von Doom'),
     ('Bruce Banner', 'Hulk', 'Hulk Fist', 'Emil Blonsky'),
     ('Peter Parker', 'Spider-Man', 'Spider-Man Spider', 'Norman Osborn');
 
@@ -89,6 +96,7 @@ VALUES
     ('Iron Man Suit', 'Various, incl. titanium', 'Armor', 'Protective suit for Iron Man'),
     ('Captain America Shield', 'Vibranium', 'Shield', 'Shield used by Captain America'),
     ('Infinity Gauntlet', 'Uru', 'Weapon', 'Gauntlet designed to hold six of the "soul gems"'),
+    ('Eye Patch', 'Leather', 'Health', 'Eye patch for those who lost an eye'),
     ('Web-Shooters', 'Various', 'Device', 'Spider-Man`s tool for web shooting');
 
 -- Table: Poder
@@ -98,6 +106,10 @@ VALUES
     ('Flight', 'Ability to fly'),
     ('Invulnerability', 'Immunity to harm or damage'),
     ('Telepathy', 'Ability to read or control minds'),
+    ('ShapeShift', 'Ability change body form or how is perceived'),
+    ('Magic', 'Ability to cast spells and other forms of magic'),
+    ('Magnetism Manipulation', 'Ability to control magnetic fields'),
+    ('Elasticity', 'Super human Elasticity'),
     ('Regeneration', 'Ability to heal rapidly from physical injuries');
 
 -- Table: Combate
@@ -159,6 +171,7 @@ VALUES
     ('Erik Lehnsherr', 'DEU'),
     ('Pepper Potts', 'USA'),
     ('Jane Foster', 'USA'),
+    ('Cain Marko', 'USA'),
     ('May Parker', 'USA'),
     ('Gwen Stacy', 'USA'),
     ('Betty Ross', 'USA'),
@@ -174,7 +187,7 @@ VALUES
     ('Tony Stark', 'Pepper Potts'),
     ('Tony Stark', 'Jane Foster'),
     ('Tony Stark', 'May Parker'),
-    ('Steve Rogers', 'Jane Foster'),
+    ('Thor Odinson', 'Jane Foster'),
     ('Bruce Banner', 'Betty Ross');
 
 -- Table: Trata
@@ -191,6 +204,8 @@ INSERT INTO Aparece(NombreCompleto, TituloMedio, NombreActor, Rol, TipoActor)
 VALUES
     ('Tony Stark', 'Avengers: Endgame', 'Robert Downey Jr.', 'Protagonista', 'Interpreta'),
     ('Steve Rogers', 'Avengers: Endgame', 'Chris Evans', 'Protagonista', 'Interpreta'),
+    ('Thor Odinson', 'Avengers: Endgame', 'Christopher Hemsworth', 'Protagonista', 'Interpreta'),
+    ('Groot', 'Avengers: Endgame', 'Vin Diesel', 'Protagonista', 'Interpreta'),
     ('Natasha Romanoff', 'Avengers: Endgame', 'Scarlett Johansson', 'Protagonista', 'Interpreta'),
     ('Bruce Banner', 'Avengers: Endgame', 'Mark Ruffalo', 'Protagonista', 'Interpreta'),
     ('Peter Parker', 'Spider-Man: Homecoming', 'Tom Holland', 'Protagonista', 'Interpreta'),
@@ -230,6 +245,7 @@ INSERT INTO Pertenece(NombreCompleto, NombreOrg, Cargo, Fecha)
 VALUES
     ('Tony Stark', 'Avengers', 'Iron Man', '1963-09-01'),
     ('Steve Rogers', 'Avengers', 'Captain America', '1941-03-01'),
+    ('Thor Odinson', 'Avengers', 'Thor', '1941-03-01'),
     ('Natasha Romanoff', 'Avengers', 'Black Widow', '1964-04-01'),
     ('Bruce Banner', 'Avengers', 'Hulk', '1962-05-01'),
     ('Peter Parker', 'Avengers', 'Spider-Man', '1962-08-01'),
@@ -243,7 +259,9 @@ VALUES
 INSERT INTO Porta(NombreCompleto, NombreObj)
 VALUES
     ('Tony Stark', 'Iron Man Suit'),
+    ('Thanos', 'Infinity Gauntlet'),
     ('Steve Rogers', 'Captain America Shield'),
+    ('Nick Fury', 'Eye Patch'),
     ('Peter Parker', 'Web-Shooters');
 
 -- Table: Posee
@@ -252,43 +270,28 @@ VALUES
     ('Tony Stark', 'Super Strength', 'Artificial'),
     ('Tony Stark', 'Flight', 'Artificial'),
     ('Steve Rogers', 'Super Strength', 'Artificial'),
-    ('Steve Rogers', 'Invulnerability', 'Artificial'),
+    ('Thor Odinson', 'Super Strength', 'Hereditario'),
+    ('Thor Odinson', 'Magic', 'Hereditario'),
+    ('Groot', 'Super Strength', 'Hereditario'),
     ('Natasha Romanoff', 'Super Strength', 'Artificial'),
-    ('Natasha Romanoff', 'Telepathy', 'Artificial'),
     ('Bruce Banner', 'Super Strength', 'Artificial'),
     ('Bruce Banner', 'Regeneration', 'Artificial'),
     ('Peter Parker', 'Super Strength', 'Natural'),
-    ('Peter Parker', 'Flight', 'Natural'),
     ('Johann Shmidt', 'Super Strength', 'Artificial'),
-    ('Johann Shmidt', 'Telepathy', 'Artificial'),
-    ('Loki Laufeyson', 'Super Strength', 'Artificial'),
-    ('Loki Laufeyson', 'Flight', 'Artificial'),
+    ('Loki Laufeyson', 'ShapeShift', 'Hereditario'),
+    ('Loki Laufeyson', 'Magic', 'Hereditario'),
     ('Ultron', 'Flight', 'Artificial'),
-    ('Ultron', 'Invulnerability', 'Artificial'),
+    ('Ultron', 'Super Strength', 'Artificial'),
     ('Victor Von Doom', 'Super Strength', 'Artificial'),
-    ('Victor Von Doom', 'Telepathy', 'Artificial'),
-    ('Erik Lehnsherr', 'Super Strength', 'Natural'),
-    ('Erik Lehnsherr', 'Flight', 'Natural'),
-    ('Pepper Potts', 'Super Strength', 'Artificial'),
-    ('Pepper Potts', 'Telepathy', 'Artificial'),
-    ('Jane Foster', 'Flight', 'Artificial'),
-    ('Jane Foster', 'Telepathy', 'Artificial'),
-    ('May Parker', 'Super Strength', 'Natural'),
-    ('May Parker', 'Regeneration', 'Natural'),
-    ('Gwen Stacy', 'Super Strength', 'Artificial'),
-    ('Gwen Stacy', 'Flight', 'Artificial'),
-    ('Betty Ross', 'Super Strength', 'Artificial'),
-    ('Betty Ross', 'Invulnerability', 'Artificial'),
-    ('Nick Fury', 'Telepathy', 'Artificial'),
-    ('Nick Fury', 'Regeneration', 'Artificial'),
-    ('Reed Richards', 'Super Strength', 'Artificial'),
-    ('Reed Richards', 'Flight', 'Artificial'),
-    ('Charles Xavier', 'Telepathy', 'Natural'),
-    ('Charles Xavier', 'Regeneration', 'Natural'),
+    ('Victor Von Doom', 'Magic', 'Artificial'),
+    ('Erik Lehnsherr', 'Magnetism Manipulation', 'Hereditario'),
+    ('Reed Richards', 'Elasticity', 'Artificial'),
+    ('Charles Xavier', 'Telepathy', 'Hereditario'),
     ('Emil Blonsky', 'Super Strength', 'Artificial'),
     ('Emil Blonsky', 'Invulnerability', 'Artificial'),
-    ('Norman Osborn', 'Flight', 'Artificial'),
-    ('Norman Osborn', 'Telepathy', 'Artificial');
+    ('Thanos', 'Super Strength', 'Hereditario'),
+    ('Cain Marko', 'Super Strength', 'Hereditario'),
+    ('Norman Osborn', 'Super Strength', 'Artificial');
 
 INSERT INTO ParticipaObj(NombreCompleto, FechaCombate, LugarComb, Nombre)
 VALUES
