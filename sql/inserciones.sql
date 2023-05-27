@@ -337,16 +337,16 @@ VALUES
 -- ColoresTrajeHeroe
 INSERT INTO ColoresTrajeHeroe (NombreHeroe, ColorTraje)
 VALUES 
-    ('Iron Man', 'Rojo'),
-    ('Iron Man', 'Dorado'),
-    ('Captain America', 'Azul'),
-    ('Captain America', 'Blanco'),
-    ('Captain America', 'Rojo'),
-    ('Black Widow', 'Negro'),
-    ('Hulk', 'Verde'),
-    ('Hulk', 'Morado'),
-    ('Spider-Man', 'Rojo'),
-    ('Spider-Man', 'Azul');
+    ('Tony Stark', 'Rojo'),
+    ('Tony Stark', 'Dorado'),
+    ('Steve Rogers', 'Azul'),
+    ('Steve Rogers', 'Blanco'),
+    ('Steve Rogers', 'Rojo'),
+    ('Natasha Romanoff', 'Negro'),
+    ('Bruce Banner', 'Verde'),
+    ('Bruce Banner', 'Morado'),
+    ('Peter Parker', 'Rojo'),
+    ('Peter Parker', 'Azul');
 
 -- EnemigoVillano
 INSERT INTO EnemigoVillano (NombreVillano, Enemigo)
