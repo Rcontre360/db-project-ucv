@@ -12,7 +12,7 @@ CREATE TABLE Conoce(
 );
 
 CREATE TABLE Trata(
-    Villano VARCHAR(255) REFERENCES Heroe(NombreCompleto),
+    Villano VARCHAR(255) REFERENCES Villano(NombreCompleto),
     Civil VARCHAR(255) REFERENCES Civil(NombreCompleto),
     PRIMARY KEY (Villano,Civil)
 );
