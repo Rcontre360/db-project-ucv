@@ -26,7 +26,15 @@ GROUP BY Lugar
 ORDER BY COUNT(*) DESC
 LIMIT 3;
 
-SELECT Descripcion --Consulta #5
+SELECT TituloMedio --Consulta #5
+FROM Pelicula
+WHERE Pelicula.Duracion > 150 AND Pelicula.TipoPelicula = 'animada' AND Pelicula.Ganancias > (
+		SELECT AVG(Pelicula.Ganancias) 
+		FROM Pelicula 
+		WHERE TipoPelicula = 'animada')
+ORDER BY Pelicula.CosteProd;
+
+SELECT Descripcion --Consulta #6
 FROM Poder
 WHERE Poder.Nombre IN (
 		SELECT Posee.NombrePoder 
@@ -39,14 +47,6 @@ WHERE Poder.Nombre IN (
 		HAVING COUNT(Posee.NombrePoder) >= 2)
 	AND Poder.Nombre LIKE '%Super%';
 	
-SELECT TituloMedio --Consulta #6
-FROM Pelicula
-WHERE Pelicula.Duracion > 150 AND Pelicula.TipoPelicula = 'animada' AND Pelicula.Ganancias > (
-		SELECT AVG(Pelicula.Ganancias) 
-		FROM Pelicula 
-		WHERE TipoPelicula = 'animada')
-ORDER BY Pelicula.CosteProd;
-
 SELECT NombreActor --Consulta #7 (Nombre de los actores que interpretan a Peter Parker en peliculas)
 FROM Aparece
 WHERE Aparece.TipoActor = 'Interpreta' AND Aparece.NombreCompleto = 'Peter Paker' AND TituloMedio IN (

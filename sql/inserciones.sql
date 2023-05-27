@@ -116,14 +116,22 @@ VALUES
     ('Spider-Man: Homecoming', '2017-07-07', 'Marvel Studios', 4, 'Peter Parker balances his life as an ordinary high school student in Queens with his superhero alter-ego Spider-Man.'),
     ('Black Panther', '2018-02-16', 'Marvel Studios', 4.3, 'T''Challa, the new ruler of the advanced kingdom of Wakanda, must defend his land from being torn apart by enemies from outside and inside the country.'),
     ('The Falcon and The Winter Soldier', '2021-03-19', 'Marvel Studios', 4, 'Falcon and the Winter Soldier are a mismatched duo who team up for a global adventure that will test their survival skills.'),
-    ('Marvel''s Spider-Man', '2018-09-07', 'Insomniac Games', 4.7, 'Peter Parker with eight years of crime fighting experience under his belt, now struggles to balance his work-life with his superhero life.');
+    ('Marvel''s Spider-Man', '2018-09-07', 'Insomniac Games', 4.7, 'Peter Parker with eight years of crime fighting experience under his belt, now struggles to balance his work-life with his superhero life.'),
+    ('Guardians of the Galaxy', '2014-08-01', 'Marvel Studios', 4.2, 'A group of intergalactic misfits team up to save the galaxy from a powerful villain.'),
+    ('The Death of Spider-Man', '2011-06-28', 'Marvel Animation', 4.2, 'In this animated film, Spider-Man faces his greatest challenge yet as he goes up against a deadly enemy who threatens his very existence.'),
+    ('Avengers Confidential: Black Widow & Punisher', '2014-03-25', 'Marvel Animation', 3.8, 'Black Widow and the Punisher team up to take down a dangerous terrorist organization in this action-packed animated adventure.'),
+    ('Spider-Man: Into the Spider-Verse', '2018-12-14', 'Sony Pictures Releasing', 4.6, 'Miles Morales discovers the limitless possibilities of the Spider-Verse as he teams up with various versions of Spider-Man from different dimensions to save their worlds.');
 
 -- Table: Pelicula
 INSERT INTO Pelicula(Director, Duracion, Distribuidor, TipoPelicula, CosteProd, Ganancias, TituloMedio) 
 VALUES 
     ('Anthony Russo, Joe Russo', 181, 'Walt Disney Studios Motion Pictures', 'Superhero', 356000000, 2797800564, 'Avengers: Endgame'),
     ('Jon Watts', 133, 'Sony Pictures Releasing', 'Superhero', 175000000, 880166924, 'Spider-Man: Homecoming'),
-    ('Ryan Coogler', 134, 'Walt Disney Studios Motion Pictures', 'Superhero', 200000000, 1346913161, 'Black Panther');
+    ('Ryan Coogler', 134, 'Walt Disney Studios Motion Pictures', 'Superhero', 200000000, 1346913161, 'Black Panther'),
+    ('James Gunn', 136, 'Walt Disney Studios Motion Pictures', 'Superhero', 200000000, 863756051, 'Guardians of the Galaxy'),
+    ('Sam Liu', 158, 'Marvel Animation', 'Animated Superhero', 4000000, 36600000, 'The Death of Spider-Man'),
+    ('Jay Oliva', 81, 'Marvel Animation', 'Animated Superhero', 3000000, 59000000, 'Avengers Confidential: Black Widow & Punisher'),
+    ('Bob Persichetti, Peter Ramsey, Rodney Rothman', 153, 'Sony Pictures Releasing', 'Animated Superhero', 90000000, 1375540831, 'Spider-Man: Into the Spider-Verse');
 
 -- Table: Serie
 INSERT INTO Serie(Creador, TotalEpi, CanalTrans, Tipo, TituloMedio) 
