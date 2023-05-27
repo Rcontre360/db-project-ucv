@@ -28,10 +28,10 @@ LIMIT 3;
 
 SELECT TituloMedio --Consulta #5
 FROM Pelicula
-WHERE Pelicula.Duracion > 150 AND Pelicula.TipoPelicula = 'animada' AND Pelicula.Ganancias > (
+WHERE Pelicula.Duracion > 150 AND Pelicula.TipoPelicula = 'Animada' AND Pelicula.Ganancias > (
 		SELECT AVG(Pelicula.Ganancias) 
 		FROM Pelicula 
-		WHERE TipoPelicula = 'animada')
+		WHERE TipoPelicula = 'Animada')
 ORDER BY Pelicula.CosteProd;
 
 SELECT Descripcion --Consulta #6

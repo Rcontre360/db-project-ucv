@@ -84,7 +84,7 @@ CREATE TABLE Pelicula (
     Director VARCHAR(255),
     Duracion NUMERIC,
     Distribuidor VARCHAR(255),
-    TipoPelicula VARCHAR(255),
+    TipoPelicula VARCHAR(255) CHECK (TipoPelicula IN('Superhéroe','Animada')), --Se agregó esta restricción de acuerdo al ítem c)
     CosteProd NUMERIC,
     Ganancias NUMERIC,
 
