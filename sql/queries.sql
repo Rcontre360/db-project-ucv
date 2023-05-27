@@ -34,7 +34,7 @@ WHERE Pelicula.Duracion > 150 AND Pelicula.TipoPelicula = 'animada' AND Pelicula
 		WHERE TipoPelicula = 'animada')
 ORDER BY Pelicula.CosteProd;
 
-SELECT Descripcion --Consulta #6
+SELECT * --Consulta #6
 FROM Poder
 WHERE Poder.Nombre IN (
 		SELECT Posee.NombrePoder 
