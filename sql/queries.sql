@@ -53,10 +53,10 @@ WHERE Aparece.TipoActor = 'Interpreta' AND Aparece.NombreCompleto = 'Peter Paker
     		SELECT TituloMedio
     		FROM Pelicula);
 
-SELECT TituloMedio --Consulta #8 (Videojuegos en lo que aparece Tony Stark o Steve Rogers que sean Online y tengan "Lego" en el nombre)
+SELECT TituloMedio --Consulta #8 (Videojuegos en lo que aparece Tony Stark o Steve Rogers, que sean de Accion y Aventura, y tengan "Lego" en el nombre)
 FROM Aparece
 WHERE Aparece.TituloMedio IN (
 		SELECT TituloMedio 
 		FROM Videojuego 
-		WHERE TituloMedio LIKE '%Lego%' AND TipoJuego = 'Online')
+		WHERE TituloMedio LIKE '%Lego%' AND TipoJuego = 'Action-Adventure')
 	AND (Aparece.NombreCompleto LIKE '%Tony Stark%' OR Aparece.NombreCompleto LIKE '%Steve Rogers%');
