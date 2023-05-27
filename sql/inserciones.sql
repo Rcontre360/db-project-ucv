@@ -351,13 +351,13 @@ VALUES
 -- EnemigoVillano
 INSERT INTO EnemigoVillano (NombreVillano, Enemigo)
 VALUES 
-    ('Red Skull', 'Captain America'),
-    ('Loki', 'Thor'),
+    ('Johann Shmidt', 'Captain America'),
+    ('Loki Laufeyson', 'Thor'),
     ('Ultron', 'The Avengers'),
-    ('Doctor Doom', 'The Avengers'),
-    ('Magneto', 'X-Men'),
-    ('Abomination', 'Hulk'),
-    ('Green Goblin', 'Spider-Man');
+    ('Victor Von Doom', 'The Avengers'),
+    ('Erik Lehnsherr', 'X-Men'),
+    ('Emil Blonsky', 'Hulk'),
+    ('Norman Osborn', 'Spider-Man');
 
 -- OcupacionPersonaje
 INSERT INTO OcupacionPersonaje (NombrePersonaje, Ocupacion)
