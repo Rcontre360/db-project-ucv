@@ -84,7 +84,7 @@ CREATE TABLE Pelicula (
     Director VARCHAR(255),
     Duracion NUMERIC,
     Distribuidor VARCHAR(255),
-    TipoPelicula VARCHAR(255),
+    TipoPelicula VARCHAR(255) CHECK (TipoPelicula IN('Superhéroe','Animada')), --Se agregó esta restricción de acuerdo al ítem c)
     CosteProd NUMERIC,
     Ganancias NUMERIC,
 
@@ -374,13 +374,13 @@ VALUES
 -- Table: Pelicula
 INSERT INTO Pelicula(Director, Duracion, Distribuidor, TipoPelicula, CosteProd, Ganancias, TituloMedio) 
 VALUES 
-    ('Anthony Russo, Joe Russo', 181, 'Walt Disney Studios Motion Pictures', 'Superhero', 356000000, 2797800564, 'Avengers: Endgame'),
-    ('Jon Watts', 133, 'Sony Pictures Releasing', 'Superhero', 175000000, 880166924, 'Spider-Man: Homecoming'),
-    ('Ryan Coogler', 134, 'Walt Disney Studios Motion Pictures', 'Superhero', 200000000, 1346913161, 'Black Panther'),
-    ('James Gunn', 136, 'Walt Disney Studios Motion Pictures', 'Superhero', 200000000, 863756051, 'Guardians of the Galaxy'),
-    ('Sam Liu', 158, 'Marvel Animation', 'Animated Superhero', 4000000, 36600000, 'The Death of Spider-Man'),
-    ('Jay Oliva', 81, 'Marvel Animation', 'Animated Superhero', 3000000, 59000000, 'Avengers Confidential: Black Widow & Punisher'),
-    ('Bob Persichetti, Peter Ramsey, Rodney Rothman', 153, 'Sony Pictures Releasing', 'Animated Superhero', 90000000, 1375540831, 'Spider-Man: Into the Spider-Verse');
+    ('Anthony Russo, Joe Russo', 181, 'Walt Disney Studios Motion Pictures', 'Superhéroe', 356000000, 2797800564, 'Avengers: Endgame'),
+    ('Jon Watts', 133, 'Sony Pictures Releasing', 'Superhéroe', 175000000, 880166924, 'Spider-Man: Homecoming'),
+    ('Ryan Coogler', 134, 'Walt Disney Studios Motion Pictures', 'Superhéroe', 200000000, 1346913161, 'Black Panther'),
+    ('James Gunn', 136, 'Walt Disney Studios Motion Pictures', 'Superhéroe', 200000000, 863756051, 'Guardians of the Galaxy'),
+    ('Sam Liu', 158, 'Marvel Animation', 'Animada', 4000000, 36600000, 'The Death of Spider-Man'),
+    ('Jay Oliva', 81, 'Marvel Animation', 'Animada', 3000000, 59000000, 'Avengers Confidential: Black Widow & Punisher'),
+    ('Bob Persichetti, Peter Ramsey, Rodney Rothman', 153, 'Sony Pictures Releasing', 'Animada', 90000000, 1375540831, 'Spider-Man: Into the Spider-Verse');
 
 -- Table: Serie
 INSERT INTO Serie(Creador, TotalEpi, CanalTrans, Tipo, TituloMedio) 
