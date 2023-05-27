@@ -12,7 +12,7 @@ CREATE TABLE Personaje (
 CREATE TABLE Organizacion (
     Nombre VARCHAR(255) PRIMARY KEY,
     Slogan VARCHAR(255),
-    Tipo VARCHAR(255) CHECK (Tipo IN('Superhéroes','Villanos','Civiles')), --Se agregó esta restricción de acuerdo al ítem c)
+    Tipo VARCHAR(255),-- CHECK (Tipo IN ('Superhéroes','Villanos','Civiles')), --Se agregó esta restricción de acuerdo al ítem c)
     Objetivo VARCHAR(255),
     LugarCreacion VARCHAR(255),
     PrimeraAparicion DATE,
