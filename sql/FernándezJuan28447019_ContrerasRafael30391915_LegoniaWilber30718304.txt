@@ -74,4 +74,8 @@ R_24(NombreOrg, NombreSede, UbicaciónSd, TipoEdificaciónSd)
 Justificación: Todas estas tablas están en 3FN porque se cumple que están en 2FN y NO existe dependencia transitiva entre los atributos NO clave con respecto a su clave.
 
 -------------------------------------------------------------------------------------------------------------------------------------
-En nuestra BD se corre primero el archivo main.sql, seguido de relations.sql y por último multivalues.sql
+En nuestra BD se corre primero el archivo main.sql, seguido de relations.sql y por último multivalues.sql, además del archivo inserciones.sql. En el archivo queries,sql se encuentras todas las consultas requeridas
+
+En el ítem b) se agregaron las siguientes consultas:
+--Consulta #7 (Nombre de los actores que interpretan a Peter Parker en peliculas)
+--Consulta #8 (Nombre de Videojuegos en lo que aparece Tony Stark o Steve Rogers, que sean de Accion y Aventura, y tengan "Lego" en el nombre)
