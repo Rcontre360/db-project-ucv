@@ -103,3 +103,5 @@ En el ítem b) se agregaron las siguientes consultas, las cuales están reflejad
 --Consulta #8 (Nombre de Videojuegos en lo que aparece Tony Stark o Steve Rogers, que sean de Accion y Aventura, y tengan "Lego" en el nombre)
 
 Las inserciones del ítem d) están todas en el archivo 'inserciones.sql'. Cabe acotar que asumimos en la Tabla Aparece data irreal en el ámbito Marvel ya que era muy complicado quisimos introducir nuestros datos como actores en los Videojuegos.
+
+En caso que se desee resetear la BD en el archivo 'resetbd.sql' se encuentran dos scripts, uno para eliminar por completo la BD y el otro para eliminar solo la data en las tablas, de igual forma cada uno está comentado respectiamente.
