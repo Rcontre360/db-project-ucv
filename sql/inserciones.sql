@@ -132,7 +132,12 @@ VALUES
     ('Guardians of the Galaxy', '2014-08-01', 'Marvel Studios', 4.2, 'A group of intergalactic misfits team up to save the galaxy from a powerful villain.'),
     ('The Death of Spider-Man', '2011-06-28', 'Marvel Animation', 4.2, 'In this animated film, Spider-Man faces his greatest challenge yet as he goes up against a deadly enemy who threatens his very existence.'),
     ('Avengers Confidential: Black Widow & Punisher', '2014-03-25', 'Marvel Animation', 3.8, 'Black Widow and the Punisher team up to take down a dangerous terrorist organization in this action-packed animated adventure.'),
-    ('Spider-Man: Into the Spider-Verse', '2018-12-14', 'Sony Pictures Releasing', 4.6, 'Miles Morales discovers the limitless possibilities of the Spider-Verse as he teams up with various versions of Spider-Man from different dimensions to save their worlds.');
+    ('Spider-Man: Into the Spider-Verse', '2018-12-14', 'Sony Pictures Releasing', 4.6, 'Miles Morales discovers the limitless possibilities of the Spider-Verse as he teams up with various versions of Spider-Man from different dimensions to save their worlds.'),
+    ('Moon Knight', '2022-03-30', 'Marvel Studios', 4.7, 'Marc Spector, a mercenary who has dissociative identity disorder (DID), is drawn into a deadly mystery involving Egyptian gods with his multiple alters, such as Steven Grant.'),
+    ('What If...?', '2021-08-11', 'Marvel Studios', 4.5, 'Following the establishment of the multiverse in the season one finale of Loki, What If...? explores various alternate timelines across the multiverse in which major moments from the Marvel Cinematic Universe (MCU) films occur differently, as observed by the Watcher.'),
+    ('Loki', '2021-06-09', 'Marvel Studios', 4.7, 'After stealing the Tesseract during the events of Avengers: Endgame (2019), an alternate version of Loki is brought to the mysterious Time Variance Authority (TVA), a bureaucratic organization that exists outside of time and space and monitors the timeline.'),
+    ('WandaVision', '2021-01-15', 'Marvel Studios', 4.4, 'Wanda Maximoff and Vision are living an idyllic suburban life in the town of Westview, New Jersey, trying to conceal their true natures. As their surroundings begin to move through different decades and they encounter various television tropes, the couple suspects that things are not as they seem.'),
+    ('Lego Marvel''s Avengers', '2016-01-26', 'Travellers Tales', 4.3, 'The Avengers Assemble! The hit LEGO Marvel video game franchise returns with an all-new action-packed superhero adventure. Join the LEGO Marvel Avengers team and enjoy a video game featuring characters and stories from the popular movies and more. Play as the most powerful superheroes in their fight to save the world.');
 
 -- Table: Pelicula
 INSERT INTO Pelicula(Director, Duracion, Distribuidor, TipoPelicula, CosteProd, Ganancias, TituloMedio) 
@@ -148,13 +153,17 @@ VALUES
 -- Table: Serie
 INSERT INTO Serie(Creador, TotalEpi, CanalTrans, Tipo, TituloMedio) 
 VALUES 
-    ('Malcolm Spellman', 6, 'Disney+', 'Superhero', 'The Falcon and The Winter Soldier');
+    ('Malcolm Spellman', 6, 'Disney+', 'Superhero', 'The Falcon and The Winter Soldier'),
+    ('Jeremy Slater', 6, 'Disney+', 'Superhero', 'Moon Knight'),
+    ('A.C. Bradley', 9, 'Disney+', 'Superhero', 'What If...?'),
+    ('Michael Waldron', 6, 'Disney+', 'Villain', 'Loki'),
+    ('Jac Schaeffer', 9, 'Disney+', 'Superhero', 'WandaVision');
 
 -- Table: Videojuego
 INSERT INTO Videojuego(TipoJuego, CompaniaPub, TituloMedio) 
 VALUES 
-    ('Action-Adventure', 'Sony Interactive Entertainment', 'Marvel''s Spider-Man');
-
+    ('Action-Adventure', 'Sony Interactive Entertainment', 'Marvel''s Spider-Man'),
+    ('Action-Adventure', 'Warner Bros. Interactive Entertainment', 'Lego Marvel''s Avengers');
 
 -- Table: Tiene
 INSERT INTO Tiene(NombreCompleto, Pais) 
@@ -203,11 +212,15 @@ VALUES
 INSERT INTO Aparece(NombreCompleto, TituloMedio, NombreActor, Rol, TipoActor)
 VALUES
     ('Tony Stark', 'Avengers: Endgame', 'Robert Downey Jr.', 'Protagonista', 'Interpreta'),
+    ('Tony Stark', 'Lego Marvel''s Avengers', 'Wilber Legonia.', 'Protagonista', 'Presta su voz'),
     ('Steve Rogers', 'Avengers: Endgame', 'Chris Evans', 'Protagonista', 'Interpreta'),
+    ('Steve Rogers', 'Lego Marvel''s Avengers', 'Juan Fernandez', 'Protagonista', 'Presta su voz'),
     ('Thor Odinson', 'Avengers: Endgame', 'Christopher Hemsworth', 'Protagonista', 'Interpreta'),
+    ('Thor Odinson', 'Lego Marvel''s Avengers', 'Rafael Contreras', 'Protagonista', 'Presta su voz'),
     ('Groot', 'Avengers: Endgame', 'Vin Diesel', 'Protagonista', 'Interpreta'),
     ('Natasha Romanoff', 'Avengers: Endgame', 'Scarlett Johansson', 'Protagonista', 'Interpreta'),
     ('Bruce Banner', 'Avengers: Endgame', 'Mark Ruffalo', 'Protagonista', 'Interpreta'),
+    ('Bruce Banner', 'Lego Marvel''s Avengers', 'Luis Ramirez', 'Protagonista', 'Presta su voz'),
     ('Peter Parker', 'Spider-Man: Homecoming', 'Tom Holland', 'Protagonista', 'Interpreta'),
     ('Peter Parker', 'Marvel''s Spider-Man', 'Yuri Lowenthal', 'Protagonista', 'Presta su voz');
 

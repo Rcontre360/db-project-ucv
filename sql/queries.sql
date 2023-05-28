@@ -34,7 +34,7 @@ WHERE Pelicula.Duracion > 150 AND Pelicula.TipoPelicula = 'Animada' AND Pelicula
 		WHERE TipoPelicula = 'Animada')
 ORDER BY Pelicula.CosteProd;
 
-SELECT Descripcion --Consulta #6
+SELECT * --Consulta #6
 FROM Poder
 WHERE Poder.Nombre IN (
 		SELECT Posee.NombrePoder 
@@ -53,10 +53,10 @@ WHERE Aparece.TipoActor = 'Interpreta' AND Aparece.NombreCompleto = 'Peter Parke
     		SELECT TituloMedio
     		FROM Pelicula);
 
-SELECT TituloMedio --Consulta #8 (Videojuegos en lo que aparece Tony Stark o Steve Rogers que sean Online y tengan "Lego" en el nombre)
+SELECT TituloMedio --Consulta #8 (Videojuegos en lo que aparece Tony Stark o Steve Rogers, que sean de Accion y Aventura, y tengan "Lego" en el nombre)
 FROM Aparece
 WHERE Aparece.TituloMedio IN (
 		SELECT TituloMedio 
 		FROM Videojuego 
-		WHERE TituloMedio LIKE '%Lego%' AND TipoJuego = 'Online')
+		WHERE TituloMedio LIKE '%Lego%' AND TipoJuego = 'Action-Adventure')
 	AND (Aparece.NombreCompleto LIKE '%Tony Stark%' OR Aparece.NombreCompleto LIKE '%Steve Rogers%');

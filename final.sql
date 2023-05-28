@@ -420,6 +420,7 @@ VALUES
     ('Erik Lehnsherr', 'DEU'),
     ('Pepper Potts', 'USA'),
     ('Jane Foster', 'USA'),
+    ('Cain Marko', 'USA'),
     ('May Parker', 'USA'),
     ('Gwen Stacy', 'USA'),
     ('Betty Ross', 'USA'),
